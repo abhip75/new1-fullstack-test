@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>My page</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+
+        <h2>My Tabs</h2>
+        
+        
+        <div class="tab">
+          <button class="tablinks" onclick="openWord(event, 'Communication')" id="defaultOpen"><i class="fa fa-envelope-o"></i>Communication</button>
+          <button class="tablinks" onclick="openWord(event, 'Learning')"><i class="fa fa-users"></i>Learning</button>
+          <button class="tablinks" onclick="openWord(event, 'Technology')"><i class="fa fa-desktop"></i>Technology</button>
+        </div>
+        
+        <div id="Communication" class="tabcontent">
+          <h3>Communication</h3>
+        </div>
+        
+        <div id="Learning" class="tabcontent">
+          <h3>Learning</h3>
+        </div>
+        
+        <div id="Technology" class="tabcontent">
+          <h3>Technology</h3>
+        </div>
+        
+        <script>
+        function openWord(evt, wordName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(wordName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        
+        
+        document.getElementById("defaultOpen").click();
+        </script>
+        </body>
+</html>
